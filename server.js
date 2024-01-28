@@ -30,7 +30,7 @@ var corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Import route
 const routes = require("./routes");
