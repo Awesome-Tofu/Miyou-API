@@ -18,6 +18,7 @@ var whitelist = [
   "https://www.miyou.me",
   "https://miyou.me",
   "http://localhost:3000",
+  "https://miyou-alpha.vercel.app"
 ];
 var corsOptions = {
   origin: function (origin, callback) {
