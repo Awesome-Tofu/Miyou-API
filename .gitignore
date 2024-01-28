@@ -1,3 +1,7 @@
 node_modules
 *.env
 .env
+oke.js
+package-lock.json
+etc.txt
+lol.js

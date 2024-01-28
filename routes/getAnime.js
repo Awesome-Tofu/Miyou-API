@@ -4,7 +4,7 @@ const axios = require("axios");
 
 const route = express.Router();
 
-const url = "https://gogoanime.fi";
+const url = "https://anitaku.to";
 const anilistUrl = "https://graphql.anilist.co";
 const list_episodes_url = "https://ajax.gogo-load.com/ajax/load-list-episode";
 
@@ -12,7 +12,7 @@ let searchQueryStrings = require("../queryVariables/searchQueryStrings");
 
 route.get("/getanime", async (req, res) => {
   let link = url + req.query.link;
-
+  if(link.endsWith("/")) link = link.slice(0, -1);
   try {
     const result = [];
     const { data } = await axios.get(link);
