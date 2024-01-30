@@ -5,12 +5,13 @@ const { scrapeSourceFiles } = require("../queryVariables/SourceFiles");
 
 const route = express.Router();
 
-const url = "https://gogoanime.fi";
+const url = "https://anitaku.to";
 const iframeLink = (episodeId) =>
   `https://disqus.com/embed/comments/?base=default&f=gogoanimetv&t_u=https%3A%2F%2Fgogoanime.vc%2F${episodeId}&s_o=default#version=cfefa856cbcd7efb87102e7242c9a829`;
 
 route.get("/getlinks", async (req, res) => {
   let link = url + req.query.link;
+  if (link.endsWith("/")) link = link.slice(0, -1);
   let sources;
   try {
     sources = await scrapeSourceFiles(req.query.link);
